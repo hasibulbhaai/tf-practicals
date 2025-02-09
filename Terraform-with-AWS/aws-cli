@@ -1,0 +1,93 @@
+aws <command> <sub-command> [options]
+
+$ aws iam create-user --user-name <user>
+
+arn: amazon resource name
+
+
+aws help #for help
+aws iam help
+aws ec2 help
+
+
+http://aws:4566 as the option, like this:
+aws --endpoint http://aws:4566 iam list-users
+
+❯ aws --endpoint-url http://aws:4566 iam create-user --user-name mary
+{
+    "User": {
+        "Path": "/",
+        "UserName": "mary",
+        "UserId": "3e9rlyk2jik6kuy7onbu",
+        "Arn": "arn:aws:iam::000000000000:user/mary",
+        "CreateDate": "2025-02-06T05:26:54.231000+00:00"
+    }
+}
+
+
+root in ~ on ☁️  (us-east-1)
+❯ aws iam list-users --endpoint-url http://aws:4566
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "jill",
+            "UserId": "981zurggk4jeqot5l7gj",
+            "Arn": "arn:aws:iam::000000000000:user/jill",
+            "CreateDate": "2025-02-06T05:22:26.264000+00:00"
+        },
+        {
+            "Path": "/",
+            "UserName": "jack",
+            "UserId": "djzhocv6za5ui3pbemsf",
+            "Arn": "arn:aws:iam::000000000000:user/jack",
+            "CreateDate": "2025-02-06T05:22:27.222000+00:00"
+        },
+        {
+            "Path": "/",
+            "UserName": "mary",
+            "UserId": "3e9rlyk2jik6kuy7onbu",
+            "Arn": "arn:aws:iam::000000000000:user/mary",
+            "CreateDate": "2025-02-06T05:26:54.231000+00:00"
+        }
+    ]
+}
+
+
+❯ aws --endpoint-url http://aws:4566 iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --user-name mary
+
+
+❯ aws --endpoint-url http://aws:4566 iam create-group --group-name project-sapphire-developers
+{
+    "Group": {
+        "Path": "/",
+        "GroupName": "project-sapphire-developers",
+        "GroupId": "8kre3kjqem898ihosq7n",
+        "Arn": "arn:aws:iam::000000000000:group/project-sapphire-developers",
+        "CreateDate": "2025-02-06T05:33:56.780000+00:00"
+    }
+}
+
+
+root in ~/.aws on ☁️  (us-east-1)
+❯ aws --endpoint-url http://aws:4566 iam add-user-to-group --group-name project-sapphire-developers --user-name jack
+
+root in ~/.aws on ☁️  (us-east-1)
+❯ aws --endpoint-url http://aws:4566 iam add-user-to-group --group-name project-sapphire-developers --user-name jill
+
+
+
+root in ~/.aws on ☁️  (us-east-1)
+❯ aws --endpoint-url http://aws:4566 iam list-attached-user-policies --user-name jack
+{
+    "AttachedPolicies": []
+}
+
+root in ~/.aws on ☁️  (us-east-1)
+❯ aws --endpoint-url http://aws:4566 iam list-attached-user-policies --user-name jill
+{
+    "AttachedPolicies": []
+}
+
+
+❯ aws --endpoint-url http://aws:4566 iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --group-name project-sapphire-developers

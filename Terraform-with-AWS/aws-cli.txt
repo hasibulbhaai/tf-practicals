@@ -1,0 +1,35 @@
+    2  aws cli
+    3  aws cli version
+    4  aws cli | grep version
+    5  aws --version
+    6  aws iam list-user
+    7  aws iam list-users
+    8  aws iam list-users --endpoint http://aws:4566
+    9  aws --endpoint http://aws:4566 create-user --username --help
+   10  aws create-user --user-name -help
+   11  aws iam create-user --user-name mary --endpoint http://aws:4566
+   12  aws iam list-users --endpoint http://aws:4566
+   13  cat /root/.aws/config
+   14  cat /root/.aws/credentials
+   15  aws ima attach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --user-name mary --endpoint http://aws
+   16  aws ima attach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --user-name mary --endpoint http://aws:4566
+   17  aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --user-name mary --endpoint http://aws:4566
+   18  aws iam --user0list
+   19  aws iam --user-list
+   20  history
+   21  aws iam --list-users
+   22  aws iam list-users --endpoint http://aws:4566
+   23  aws iam --endpoint http://aws:4566 create-group -help
+   24  aws iam --endpoint http://aws:4566 create-group --group-name project-sapphire-developer
+   25  aws iam --endpoint http://aws:4566 delete-group --group-name project-sapphire-developer
+   26  aws iam --endpoint http://aws:4566 create-group --group-name project-sapphire-developers
+   27  aws iam --endpoint http:aws:4566 add-user-to-group --user-name jack --group-name project-sapphire-developers
+   28  aws iam --endpoint http://aws:4566 add-user-to-group --user-name jack --group-name project-sapphire-developers
+   29  aws iam --endpoint http://aws:4566 add-user-to-group --user-name jill --group-name project-sapphire-developers
+   30  aws --endpoint http://aws:4566 iam list-attached-group-policies --group-name project-sapphiire-developers
+   31  aws --endpoint http://aws:4566 iam list-attached-group-policies --group-name project-sapphire-developers
+   32  aws iam --endpoint gttp://aws:4566 list-attached-user-policies --user-name jack
+   33  aws iam --endpoint http://aws:4566 list-attached-user-policies --user-name jack
+   34  history
+    aws --endpoint http://aws:4566 iam attach-group-policy --group-name project-sapphire-developers  --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
+     aws --endpoint http://aws:4566 iam attach-group-policy --group-name project-sapphire-developers  --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
